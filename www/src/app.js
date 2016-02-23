@@ -35,7 +35,8 @@ angular.module('places', ['ionic'])
     url: '/places',
     views: {
       'tab-places': {
-        templateUrl: 'src/tabs/places.html'
+        templateUrl: 'src/places/places.html',
+        controller: 'PlacesCtrl'
       }
     }
   })
@@ -51,33 +52,19 @@ angular.module('places', ['ionic'])
     url: '/map',
     views: {
       'tab-map': {
-        templateUrl: 'src/tabs/map.html'
+        templateUrl: 'src/map/map.html',
+        controller: 'MapCtrl'
       }
     }
   })
   .state('tab.friends', {
     url: '/friends',
-    /*data: {
-      friends:[{
-        'name':'James Bond',
-        'status':'available'
-      },{
-        'name':'Donald Duck',
-        'status':'busy'
-      },{
-        'name':'Mickey Mouse',
-        'status':'not available'
-      },{
-        'name':'Goofy',
-        'status':'playing'
-      }]
-    },*/
     views: {
       'tab-friends': {
-        templateUrl: 'src/friends/friends.html'
+        templateUrl: 'src/friends/friends.html',
+        controller: 'friendsController'
       }
-    },
-    controller: 'friendsController as friendsCtrl'
+    }
   });
 
   // if none of the above states are matched, use this as the fallback

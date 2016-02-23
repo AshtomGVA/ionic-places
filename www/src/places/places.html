@@ -1,0 +1,13 @@
+<ion-view view-title="My Places">
+    <ion-content class="has-header">
+
+        <ion-item collection-repeat="place in places" item-width="100%" item-height="100px" class="list">
+        	<div class="item-thumbnail-left">
+        		<img ng-src="{{place.image}}/{{$index%9+1}}" />       
+        		<h2>{{place.name}}</h2>  
+        		<p>{{place.description}}</p>
+        	</div>
+        </ion-item>
+
+    </ion-content>
+</ion-view>
