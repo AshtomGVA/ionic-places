@@ -21,7 +21,65 @@ angular.module('places', ['ionic'])
   });
 })
 
-.config(function($urlRouterProvider) {
+
+.config(function ($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+  // setup an abstract state for the tabs directive
+  .state('tab', {
+    url: '/tab',
+    abstract: true,
+    templateUrl: 'src/tabs/tabs.html'
+  })
+  .state('tab.places', {
+    url: '/places',
+    views: {
+      'tab-places': {
+        templateUrl: 'src/tabs/places.html'
+      }
+    }
+  })
+  .state('tab.places-new', {
+    url: '/places/new',
+    views: {
+      'tab-places-new': {
+        templateUrl: 'src/tabs/places_new.html'
+      }
+    }
+  })
+  .state('tab.map', {
+    url: '/map',
+    views: {
+      'tab-map': {
+        templateUrl: 'src/tabs/map.html'
+      }
+    }
+  })
+  .state('tab.friends', {
+    url: '/friends',
+    /*data: {
+      friends:[{
+        'name':'James Bond',
+        'status':'available'
+      },{
+        'name':'Donald Duck',
+        'status':'busy'
+      },{
+        'name':'Mickey Mouse',
+        'status':'not available'
+      },{
+        'name':'Goofy',
+        'status':'playing'
+      }]
+    },*/
+    views: {
+      'tab-friends': {
+        templateUrl: 'src/friends/friends.html'
+      }
+    },
+    controller: 'friendsController as friendsCtrl'
+  });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 
