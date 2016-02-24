@@ -13,7 +13,7 @@
 	      </ion-nav-buttons>
 	    </ion-nav-bar>
 
-		<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+		<ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller="modalController">
 			<ion-tab title="My Places" icon-off="ion-ios-location-outline" icon-on="ion-ios-location" ui-sref="tab.places">
 				<ion-nav-view name="tab-places"></ion-nav-view>
 			</ion-tab>
@@ -26,20 +26,23 @@
 			<ion-tab title="Map" icon-off="ion-map" icon-on="ion-map" ui-sref="tab.map">
 				<ion-nav-view name="tab-map"></ion-nav-view>
 			</ion-tab>
+			<ion-tab title="More" icon-off="ion-more" icon-on="ion-more" ng-click="openModal()">
+				<ion-nav-view name="tab-map"></ion-nav-view>
+			</ion-tab>
 		</ion-tabs>
 
 	</ion-side-menu-content>
 
-	<ion-side-menu side="right">
-		<ion-content>
-			<!--Hello! This is the right side menu!-->
-			<ion-list>
-				<ion-item><button class="button-full button-clear button-positive">Profile</button></ion-item>
-				<ion-item><button class="button-full button-clear button-positive">Settings</button></ion-item>
-				<ion-item><button class="button-full button-clear button-positive">Logout</button></ion-item>
-				<ion-item><button class="button-full button-clear button-positive">Credits</button></ion-item>
-			</ion-list>
-		</ion-content>
-	</ion-side-menu>
+    <!-- Right menu -->
+    <ion-side-menu side="right" ng-controller="UserCtrl">
+        <a class="item item-avatar item-text-wrap" href="#">
+            <img ng-src="{{user.pic}}" />
+            <h2>Hello {{user.email}}</h2>
+            <p>Ready to be an hybrid developer with Cordova/Ionic/Angular ?</p>
+        </a>
+        <div class="padding">
+            <button class="button button-block button-assertive" ui-sref="login" menu-toggle="right">Logout</button>
+        </div>
+    </ion-side-menu>
 
 </ion-side-menus>

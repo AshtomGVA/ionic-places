@@ -1,0 +1,42 @@
+ <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Settings</h1>
+      <button class="button button-clear ion-close" ng-click="closeModal()"></button>
+    </ion-header-bar>
+    <ion-content>
+    	<ul class="list">
+
+			<li class="item item-toggle">
+			   Geolocalisation
+			   <label class="toggle">
+			     <input type="checkbox">
+			     <div class="track">
+			       <div class="handle"></div>
+			     </div>
+			   </label>
+			</li>
+			<li>
+				<div class="item">
+					<p>Search radius: {{radius}}km</p>
+				</div>
+				<div class="item range">
+					<i class="icon ion-ios-minus-outline"></i>
+					<input type="range" name="volume" ng-model="radius">
+					<i class="icon ion-ios-plus-outline"></i>
+				</div>
+			</li>
+			<li>
+				<label class="item item-input item-select">
+				    <div class="input-label">
+				      Friends filter
+				    </div>
+				    <select>
+				      <option>Acquaintances</option>
+				      <option selected>Good friends</option>
+				      <option>Best friends</option>
+					</select>
+				</label>
+			</li>
+		</ul>
+	</ion-content>
+</ion-modal-view>

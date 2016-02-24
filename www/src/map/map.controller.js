@@ -11,9 +11,9 @@ angular.module('places')
 		});
 
 		navigator.geolocation.getCurrentPosition(function (pos) {
-		  console.log('Got pos', pos);
+		  //console.log('Got pos', pos);
 		  $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-		  $scope.loading.hide();
+		  $ionicLoading.hide();
 		}, function (error) {
 		  alert('Unable to get location: ' + error.message);
 		});

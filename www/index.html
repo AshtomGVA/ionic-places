@@ -14,17 +14,35 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=true"></script>
+    <script src="lib/lodash/lodash.js"></script>
+    <script src="lib/firebase/firebase-debug.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>
     
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="src/app.js"></script>
-    <script src="src/login/login.js"></script>
+    <!-- _common -->
+    <script src="src/_common/firebase/firebase.service.js"></script>
+    <script src="src/_common/modal/modal.controller.js"></script>
+
+    <!-- auth -->
+    <script src="src/auth/login/login.js"></script>
+    <script src="src/auth/login/login.controller.js"></script>
+    <script src="src/auth/login/user.controller.js"></script>
+    <script src="src/auth/login/login.service.js"></script>
+    <script src="src/auth/signup/signup.controller.js"></script>
+
+    <!-- places -->
     <script src="src/places/places.controller.js"></script>
-    <script src="src/friends/friendsController.js"></script>
+
+    <!-- friends -->
+    <script src="src/friends/friends.service.js"></script>
+    <script src="src/friends/friends.controller.js"></script>
+
+    <!-- map -->
     <script src="src/map/map.controller.js"></script>
     <script src="src/map/map.directive.js"></script>
 
